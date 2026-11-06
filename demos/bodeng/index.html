@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>泊燈料理｜示範頁</title>
+  <meta name="description" content="泊燈料理示範頁。當季小館，虛構店家。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23100e0c'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23c9864a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #100e0c;
+      --ink: #f3ede4;
+      --muted: #c8bfb2;
+      --ember: #c9864a;
+      --line: rgba(243, 237, 228, 0.16);
+      --serif: "Noto Serif TC", "Iowan Old Style", Palatino, serif;
+      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.75; }
+    a { color: var(--ink); }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
+    .hero { position: relative; min-height: 100svh; display: grid; align-items: end; }
+    .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16, 14, 12, 0.25) 0%, rgba(16, 14, 12, 0.28) 40%, rgba(16, 14, 12, 0.88) 100%); }
+    .topbar { position: absolute; z-index: 2; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; gap: 12px; padding: 22px 28px; align-items: center; }
+    .topbar a { text-decoration: none; letter-spacing: 0.18em; font-size: 0.92rem; }
+    .hero-copy { position: relative; z-index: 1; padding: 0 28px 64px; max-width: 760px; }
+    .eyebrow { letter-spacing: 0.28em; color: var(--ember); font-size: 0.78rem; margin: 0 0 12px; }
+    h1 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: clamp(4rem, 12vw, 7.5rem); line-height: 0.95; letter-spacing: 0.08em; }
+    .hero-copy p { margin: 16px 0 0; max-width: 24em; color: var(--muted); font-size: 1.05rem; }
+    .vlabel { position: absolute; z-index: 2; right: 28px; bottom: 72px; writing-mode: vertical-rl; letter-spacing: 0.45em; font-family: var(--serif); color: rgba(243, 237, 228, 0.8); }
+    .wrap { width: min(1040px, calc(100% - 40px)); margin: 0 auto; }
+    .menu { padding: 72px 0 20px; }
+    .menu h2 { font-family: var(--serif); font-weight: 500; font-size: 2rem; margin: 0 0 8px; }
+    .note { color: var(--muted); margin: 0 0 28px; }
+    .dishes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 48px; }
+    .dish { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .dish b { font-weight: 500; }
+    .dish span { display: block; color: var(--muted); font-size: 0.92rem; font-weight: 400; }
+    .price { font-variant-numeric: tabular-nums; color: var(--ember); }
+    .gallery { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 12px; padding: 36px 0 10px; }
+    .gallery figure { margin: 0; }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; min-height: 240px; }
+    .gallery figcaption { color: var(--muted); font-size: 0.85rem; padding-top: 8px; }
+    .stack { display: grid; gap: 12px; }
+    .reserve { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; padding: 64px 0 72px; align-items: end; }
+    .reserve h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; line-height: 1.3; }
+    .phone { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem); margin: 8px 0; letter-spacing: 0.04em; }
+    .hours { border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 0.9rem; }
+    footer a { color: var(--ember); }
+    @media (max-width: 800px) {
+      .dishes, .gallery, .reserve { grid-template-columns: 1fr; }
+      .vlabel { display: none; }
+      .topbar, .hero-copy { padding-left: 18px; padding-right: 18px; }
+      .hero { min-height: 92svh; }
+      h1 { letter-spacing: 0.04em; }
+      .gallery img { min-height: 220px; max-height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <img class="bg" src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=2000&q=80" alt="燈光偏暗的餐廳座位，白桌布與酒杯">
+    <div class="shade"></div>
+    <div class="topbar">
+      <a href="#menu">泊燈</a>
+      <nav aria-label="頁內">
+        <a href="#menu">菜單</a>
+        <a href="#reserve">訂位</a>
+        <a href="../../index.html">Kova</a>
+      </nav>
+    </div>
+    <p class="vlabel">當季小館</p>
+    <div class="hero-copy">
+      <p class="eyebrow">TAIPEI · EVENING</p>
+      <h1>泊燈</h1>
+      <p>少一道，把火候留住。<br>晚餐只做當天到貨的，座位不多。</p>
+    </div>
+  </header>
+
+  <section class="menu wrap" id="menu">
+    <h2>今晚的單</h2>
+    <p class="note">菜單隨市場更換。下列是示意，不是固定供應。價格為虛構。</p>
+    <div class="dishes">
+      <div class="dish"><div><b>季節小菜</b><span>溫泉蛋、當季蔬菜</span></div><div class="price">220</div></div>
+      <div class="dish"><div><b>今日湯</b><span>依早上的魚與蔬</span></div><div class="price">180</div></div>
+      <div class="dish"><div><b>炭烤魚</b><span>依到貨，一份約兩人</span></div><div class="price">680</div></div>
+      <div class="dish"><div><b>主廚肉品</b><span>當日部位，火候偏熟成</span></div><div class="price">880</div></div>
+      <div class="dish"><div><b>焙茶與冰淇淋</b><span>餐末</span></div><div class="price">180</div></div>
+      <div class="dish"><div><b>當季水果</b><span>若還有</span></div><div class="price">160</div></div>
+    </div>
+  </section>
+
+  <section class="gallery wrap" aria-label="料理與廚房">
+    <figure>
+      <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1400&q=80" alt="白盤中的烤魚、醬汁與酒杯">
+      <figcaption>示意餐點，非本店實拍。</figcaption>
+    </figure>
+    <div class="stack">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" alt="精緻擺盤的前菜，背景是餐桌燈光">
+      </figure>
+      <figure>
+        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80" alt="廚房檯面上備料的手">
+      </figure>
+    </div>
+  </section>
+
+  <section class="reserve wrap" id="reserve">
+    <div>
+      <h2>想坐下來，先打電話。</h2>
+      <p>週三至週日供應晚餐。週一、週二公休。最後點餐 21:00。六人以上請提早說。</p>
+      <div class="hours">
+        <p>18:00–21:30</p>
+        <p>臺北市大安區示範路二段 18 號</p>
+      </div>
+    </div>
+    <div>
+      <p class="eyebrow">訂位</p>
+      <p class="phone">02-0000-0000</p>
+      <p>這是示範號碼，餐廳不存在。</p>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <p>示範作品，非真實店家</p>
+    <p>照片來源：Unsplash。電話 02-0000-0000 為示意。</p>
+    <p><a href="../../index.html">返回 Kova</a></p>
+  </footer>
+</body>
+</html>

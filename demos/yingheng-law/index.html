@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>映衡法律事務所｜示範頁</title>
+  <meta name="description" content="映衡法律事務所示範頁。民事、家事與商務契約。此為虛構店家。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c1c33'/%3E%3Crect x='6' y='15' width='20' height='2' fill='%23c6a15b'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0c1c33;
+      --gold: #c6a15b;
+      --ivory: #f3eee4;
+      --ink: #1c1915;
+      --muted: #5e584e;
+      --serif: "Noto Serif TC", "Iowan Old Style", Palatino, serif;
+      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--ivory); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.8; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+    .mast {
+      text-align: center;
+      padding: 36px 20px 18px;
+      border-bottom: 1px solid rgba(12, 28, 51, 0.14);
+    }
+    .rule { width: 72px; height: 1px; background: var(--gold); margin: 14px auto; }
+    .mast p { margin: 0; letter-spacing: 0.28em; font-size: 0.78rem; color: var(--muted); }
+    .mast h1 { margin: 8px 0 0; font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 5vw, 3.1rem); letter-spacing: 0.12em; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 22px; padding: 14px 16px 18px; }
+    nav a { text-decoration: none; font-size: 0.95rem; }
+    nav a:hover { color: #8c7340; }
+    .sheet { width: min(880px, calc(100% - 36px)); margin: 0 auto; padding: 56px 0 20px; }
+    .lede { text-align: center; }
+    .lede h2 { margin: 0 auto; font-family: var(--serif); font-weight: 600; font-size: clamp(1.7rem, 3.4vw, 2.45rem); line-height: 1.45; }
+    .lede p { color: var(--muted); max-width: 38em; margin: 18px auto 0; }
+    .matters { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 22px 32px; }
+    .matters li { border-top: 1px solid rgba(12, 28, 51, 0.16); padding-top: 14px; }
+    .matters strong { display: block; font-family: var(--serif); font-size: 1.25rem; font-weight: 600; }
+    .num { color: var(--gold); font-family: var(--serif); margin-right: 8px; }
+    .matters p { margin: 8px 0 0; color: var(--muted); }
+    .band { position: relative; min-height: 460px; margin-top: 64px; display: grid; align-items: end; color: #f4efe4; }
+    .band img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .band .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 28, 51, 0.15), rgba(12, 28, 51, 0.88)); }
+    .band .inner { position: relative; width: min(880px, calc(100% - 36px)); margin: 0 auto; padding: 48px 0; }
+    .band h2 { font-family: var(--serif); font-weight: 600; margin: 0 0 10px; font-size: 1.8rem; }
+    .band p { margin: 0; max-width: 36em; }
+    .steps { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .steps li { background: rgba(243, 238, 228, 0.96); color: var(--ink); padding: 16px 14px; }
+    .steps span { display: block; font-family: var(--serif); color: #8c7340; }
+    .visit { width: min(880px, calc(100% - 36px)); margin: 0 auto; padding: 64px 0; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; }
+    .visit h2 { font-family: var(--serif); margin: 0 0 12px; }
+    .card { border: 1px solid rgba(12, 28, 51, 0.2); padding: 22px; background: #faf7f1; }
+    .card dt { color: var(--muted); font-size: 0.86rem; }
+    .card dd { margin: 0 0 12px; font-family: var(--serif); font-size: 1.15rem; }
+    .phone { font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
+    footer { background: var(--navy); color: #e7e0d2; padding: 28px 18px 36px; text-align: center; font-size: 0.92rem; }
+    footer a { color: var(--gold); }
+    footer p { margin: 6px 0; }
+    @media (max-width: 760px) {
+      .matters, .steps, .visit { grid-template-columns: 1fr; }
+      .mast h1 { letter-spacing: 0.08em; }
+      .band { min-height: 380px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="mast">
+    <p>TAIPEI</p>
+    <div class="rule"></div>
+    <h1>映衡法律事務所</h1>
+    <div class="rule"></div>
+    <p>民事 · 家事 · 商務契約</p>
+  </header>
+  <nav aria-label="頁內">
+    <a href="#matters">業務</a>
+    <a href="#way">接案方式</a>
+    <a href="#visit">聯絡</a>
+    <a href="../../index.html">返回 Kova</a>
+  </nav>
+
+  <section class="sheet lede">
+    <h2>把爭點講清楚，<br>再決定下一步。</h2>
+    <p>本所處理民事、家事與商務契約。第一次諮詢會先看你手邊的文件和時程，說明可能的途徑，以及費用怎麼計算。不把結論說在事實前面。</p>
+  </section>
+
+  <section class="sheet" id="matters">
+    <ul class="matters">
+      <li>
+        <strong><span class="num">壹</span>民事爭議</strong>
+        <p>契約履行、損害賠償等民事事件的諮詢與進行。先整理請求與證據，再談程序。</p>
+      </li>
+      <li>
+        <strong><span class="num">貳</span>家事事件</strong>
+        <p>婚姻、親權、繼承相關事宜。程序選項會依你的情況說明，不預設單一結論。</p>
+      </li>
+      <li>
+        <strong><span class="num">參</span>商務契約</strong>
+        <p>契約草稿審閱、交易條件整理。把權利義務寫成雙方看得懂的句子。</p>
+      </li>
+      <li>
+        <strong><span class="num">肆</span>法律顧問</strong>
+        <p>以月或案件為單位，協助日常法律問題。範圍在委任時寫明。</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="band" id="way">
+    <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1800&q=80" alt="深色書架上的舊書，作為事務所頁面的氛圍影像">
+    <div class="shade"></div>
+    <div class="inner">
+      <h2>接案方式</h2>
+      <p>本所不在網站上放個案結果，也不用別人的故事代替你的情況。委託前會說明保密與費用。</p>
+      <ol class="steps">
+        <li><span>一</span>預約諮詢</li>
+        <li><span>二</span>整理文件與爭點</li>
+        <li><span>三</span>說明途徑與費用</li>
+        <li><span>四</span>依委託範圍進行</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="visit" id="visit">
+    <div>
+      <h2>事務所</h2>
+      <p>諮詢請先來電。本頁為版型示範，號碼與地址都是假的，請勿前往或來信。</p>
+    </div>
+    <dl class="card">
+      <dt>地址</dt>
+      <dd>臺北市中正區示範路一段 100 號 3 樓</dd>
+      <dt>電話</dt>
+      <dd class="phone">02-0000-0000</dd>
+      <dt>時間</dt>
+      <dd>週一至週五 09:30–18:00</dd>
+    </dl>
+  </section>
+
+  <footer>
+    <p>示範作品，非真實店家</p>
+    <p>照片來源：Unsplash。電話 02-0000-0000 為示意。</p>
+    <p><a href="../../index.html">返回 Kova</a></p>
+  </footer>
+</body>
+</html>

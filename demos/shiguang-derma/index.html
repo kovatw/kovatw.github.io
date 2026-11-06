@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>蒔光皮膚科診所｜示範頁</title>
+  <meta name="description" content="蒔光皮膚科診所示範頁。一般皮膚科就醫資訊。不保證療效，不刊登治療前後影像。虛構店家。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6f1ec'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23e7d2c8'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #f7f3ee;
+      --blush: #e7d2c8;
+      --ink: #3a2e2a;
+      --deep: #6e534a;
+      --muted: #7a6a63;
+      --serif: "Noto Serif TC", "Iowan Old Style", Palatino, serif;
+      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      color-scheme: light;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--ivory); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.85; }
+    a { color: var(--deep); }
+    img { max-width: 100%; display: block; }
+    :focus-visible { outline: 2px solid var(--deep); outline-offset: 3px; }
+    header { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 10px; display: flex; justify-content: space-between; gap: 16px; align-items: baseline; flex-wrap: wrap; }
+    .brand { font-family: var(--serif); font-size: 1.2rem; text-decoration: none; color: var(--ink); }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; }
+    nav a { text-decoration: none; font-size: 0.95rem; }
+    .hero { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 48px 0 20px; }
+    .kicker { letter-spacing: 0.22em; font-size: 0.78rem; color: var(--deep); margin: 0 0 16px; }
+    h1 { margin: 0; max-width: 10em; font-family: var(--serif); font-weight: 500; font-size: clamp(2.2rem, 5vw, 3.8rem); line-height: 1.3; }
+    .split { width: min(1040px, calc(100% - 40px)); margin: 28px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .split p { margin: 0; color: var(--muted); }
+    .notice { margin-top: 22px; padding: 16px 18px; border: 1px solid var(--blush); background: #fbf8f5; color: var(--ink); }
+    figure { margin: 48px 0 0; }
+    figure img { width: 100%; height: min(62vh, 560px); object-fit: cover; }
+    figcaption { width: min(1040px, calc(100% - 40px)); margin: 10px auto 0; color: var(--muted); font-size: 0.9rem; }
+    section { width: min(1040px, calc(100% - 40px)); margin: 0 auto; padding: 56px 0 0; }
+    h2 { font-family: var(--serif); font-weight: 500; font-size: 1.8rem; margin: 0 0 18px; }
+    .rows { display: grid; gap: 0; }
+    .rows article { display: grid; grid-template-columns: 4.5em 1fr; gap: 12px; padding: 18px 0; border-top: 1px solid rgba(58, 46, 42, 0.12); }
+    .rows span { font-family: var(--serif); color: var(--deep); }
+    .rows h3 { margin: 0 0 4px; font-size: 1.1rem; font-weight: 500; }
+    .rows p { margin: 0; color: var(--muted); }
+    .hours { width: 100%; border-collapse: collapse; }
+    .hours th, .hours td { text-align: left; padding: 12px 0; border-bottom: 1px solid rgba(58, 46, 42, 0.12); font-weight: 400; }
+    .hours th { width: 8em; color: var(--deep); }
+    .visit { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; padding-bottom: 56px; }
+    .phone { font-family: var(--serif); font-size: 1.8rem; margin: 8px 0; }
+    footer { background: #3a2e2a; color: #f6f1ec; padding: 28px 20px 36px; text-align: center; font-size: 0.92rem; }
+    footer a { color: #f3e1d8; }
+    footer p { margin: 6px 0; }
+    @media (max-width: 760px) {
+      .split, .visit, .rows article { grid-template-columns: 1fr; }
+      header, .hero, .split, section, figcaption { width: min(1040px, calc(100% - 32px)); }
+      figure img { height: 280px; }
+      h1 { max-width: none; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="#top">蒔光皮膚科診所</a>
+    <nav aria-label="頁內">
+      <a href="#care">門診</a>
+      <a href="#hours">時間</a>
+      <a href="#visit">交通</a>
+      <a href="../../index.html">返回 Kova</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="top">
+    <p class="kicker">皮膚科 · 就醫資訊</p>
+    <h1>先看診，再決定要不要處理。</h1>
+    <div class="split">
+      <p>蒔光皮膚科診所提供一般皮膚科門診。濕疹、痤瘡、蕁麻疹或其他皮膚狀況，是否處置、如何處置，由醫師依個人情況評估。</p>
+      <p>若你在意外觀相關的皮膚問題，也可以在門診提出。本站不介紹特定療程名稱與價格，也不展示任何人的治療影像。</p>
+    </div>
+    <div class="notice">本網站僅供就醫資訊參考。不保證療效，不刊登治療前後比較，也不做折扣或促銷。</div>
+  </div>
+
+  <figure>
+    <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=1800&q=80" alt="淺色室內與自然光，示意用影像，不是治療成果">
+    <figcaption>示意影像，非診所實景，也不是治療前後比較。</figcaption>
+  </figure>
+
+  <section id="care">
+    <h2>門診裡會做的事</h2>
+    <div class="rows">
+      <article>
+        <span>01</span>
+        <div>
+          <h3>一般皮膚門診</h3>
+          <p>由皮膚科醫師看診，了解症狀、經過與目前的保養方式。需要哪些檢查或處置，看診時說明。</p>
+        </div>
+      </article>
+      <article>
+        <span>02</span>
+        <div>
+          <h3>檢查諮詢</h3>
+          <p>若醫師認為需要進一步檢查，會先說明目的。本站不列出「一定要做」的項目。</p>
+        </div>
+      </article>
+      <article>
+        <span>03</span>
+        <div>
+          <h3>日常衛教</h3>
+          <p>看診後說明在家可以注意的清潔與防曬等一般事項。個人建議以當次醫囑為準。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="hours">
+    <h2>看診時間</h2>
+    <table class="hours">
+      <tbody>
+        <tr><th>週一至週五</th><td>10:00–13:00、15:00–19:00</td></tr>
+        <tr><th>週六</th><td>10:00–13:00</td></tr>
+        <tr><th>週日</th><td>休診</td></tr>
+      </tbody>
+    </table>
+    <p>時段可能調整。請來電確認，本頁不提供線上掛號。</p>
+  </section>
+
+  <section class="visit" id="visit">
+    <div>
+      <h2>怎麼來</h2>
+      <p>臺北市大安區示範路三段 12 號 1 樓</p>
+      <p>近示範路口，一樓有等候座位。地址是假的。</p>
+    </div>
+    <div>
+      <h2>電話</h2>
+      <p class="phone">02-0000-0000</p>
+      <p>示範號碼，請勿撥打。診所不做價格優惠。</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>示範作品，非真實店家</p>
+    <p>照片來源：Unsplash。本頁遵守就醫資訊的呈現方式：無療效保證、無前後對比、無價格促銷。</p>
+    <p><a href="../../index.html">返回 Kova</a></p>
+  </footer>
+</body>
+</html>
