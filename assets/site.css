@@ -364,3 +364,5 @@ a { color: inherit; }
   .work-card { transition: none; }
   .work-shot img { transition: none; }
 }
+
+.hero-title span{display:inline-block}
