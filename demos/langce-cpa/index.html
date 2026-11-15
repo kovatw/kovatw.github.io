@@ -1,163 +1,246 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light">
-  <title>朗冊聯合會計師事務所｜示範頁</title>
-  <meta name="description" content="朗冊聯合會計師事務所示範頁。記帳、稅務與報表。此為虛構店家。">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f7f8fa'/%3E%3Crect width='32' height='4' fill='%231b4f8a'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --paper: #f4f7fb;
-      --white: #ffffff;
-      --ink: #1a2332;
-      --blue: #1b4f8a;
-      --line: #d5dce6;
-      --muted: #5e6a7a;
-      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      color-scheme: light;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 16.5px; line-height: 1.7; }
-    a { color: var(--blue); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    :focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
-    .shell { display: grid; grid-template-columns: 250px 1fr; min-height: 100vh; }
-    aside {
-      background: var(--white);
-      border-right: 1px solid var(--line);
-      padding: 28px 22px;
-      position: sticky;
-      top: 0;
-      height: 100vh;
-    }
-    .mark { font-weight: 700; font-size: 1.35rem; letter-spacing: 0.04em; color: var(--ink); }
-    .mark span { display: block; font-weight: 400; color: var(--muted); font-size: 0.82rem; letter-spacing: 0.08em; margin-top: 4px; }
-    aside nav { display: flex; flex-direction: column; gap: 4px; margin-top: 28px; }
-    aside nav a { color: var(--ink); padding: 8px 0; border-bottom: 1px solid var(--line); }
-    aside .side-note { margin-top: 28px; color: var(--muted); font-size: 0.88rem; }
-    main { padding: 48px 48px 72px; }
-    .label { margin: 0; color: var(--blue); font-size: 0.78rem; letter-spacing: 0.16em; font-weight: 700; }
-    h1 { margin: 10px 0 12px; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.3; }
-    .intro { max-width: 42em; color: var(--muted); margin: 0 0 28px; }
-    .stats { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); background: var(--white); margin-bottom: 36px; }
-    .stats div { padding: 16px 14px; border-right: 1px solid var(--line); }
-    .stats div:last-child { border-right: 0; }
-    .stats strong { display: block; font-size: 1.05rem; }
-    .stats span { color: var(--muted); font-size: 0.85rem; }
-    h2 { font-size: 1.15rem; margin: 0 0 12px; }
-    table { width: 100%; border-collapse: collapse; background: var(--white); }
-    th, td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
-    th { font-weight: 500; color: var(--muted); width: 11em; background: #f8fafc; }
-    .panel { margin-top: 36px; }
-    .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    .flow article { background: var(--white); border: 1px solid var(--line); padding: 16px; }
-    .flow b { display: block; color: var(--blue); font-variant-numeric: tabular-nums; font-size: 0.85rem; }
-    .visit { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .visit article { background: var(--white); border-top: 3px solid var(--blue); padding: 18px; }
-    .visit h2 { margin-bottom: 8px; }
-    .phone { font-variant-numeric: tabular-nums; font-size: 1.35rem; font-weight: 700; margin: 8px 0; }
-    footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; }
-    @media (max-width: 900px) {
-      .shell { grid-template-columns: 1fr; }
-      aside { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
-      aside nav { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; margin-top: 16px; }
-      aside nav a { border: 0; padding: 4px 0; }
-      main { padding: 28px 18px 48px; }
-      .stats, .flow, .visit { grid-template-columns: 1fr 1fr; }
-      th { width: auto; }
-    }
-    @media (max-width: 560px) {
-      .stats, .flow, .visit { grid-template-columns: 1fr; }
-      .stats div { border-right: 0; border-bottom: 1px solid var(--line); }
-      table, thead, tbody, th, td, tr { display: block; }
-      th { border-bottom: 0; padding-bottom: 0; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>朗冊聯合會計師事務所｜記帳報稅・公司設立・財務簽證｜台北松山</title>
+<meta name="description" content="朗冊聯合會計師事務所位於台北市松山區，提供公司行號記帳、營業稅與營所稅申報、個人綜所稅、公司設立變更、財務簽證及稅務規劃服務。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230e4a5a'/%3E%3Cpath d='M9 22V10h3v9h7v3z' fill='%23fff'/%3E%3Ccircle cx='22' cy='12' r='3' fill='%23f2b544'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Inter:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#0e4a5a;--teal2:#136579;--tl:#e7f1f3;--sun:#f2b544;--ink:#14232b;--mut:#5a6a72;--line:#e3e9eb;--bg:#ffffff;--soft:#f5f8f9;--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;--num:Inter,var(--sans)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}h1,h2,h3{text-wrap:balance;line-height:1.35}
+.w{width:min(1200px,calc(100% - 48px));margin:0 auto}
+.top{background:var(--teal);color:#cfe3e8;font-size:13px}.top .w{display:flex;justify-content:space-between;height:36px;align-items:center}.top a{text-decoration:none}
+.nav{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav .w{display:flex;align-items:center;justify-content:space-between;height:72px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand i{width:40px;height:40px;border-radius:11px;background:var(--teal);display:grid;place-items:center;color:#fff;font-style:normal;font-weight:900;font-size:20px;position:relative}
+.brand i:after{content:"";position:absolute;right:-3px;top:-3px;width:12px;height:12px;border-radius:50%;background:var(--sun);border:2px solid #fff}
+.brand b{font-size:19px;font-weight:700;letter-spacing:.04em}.brand small{display:block;font-size:11.5px;color:var(--mut);font-weight:500;letter-spacing:.08em;line-height:1.2}
+.links{display:flex;gap:30px;align-items:center}.links a{text-decoration:none;font-size:15.5px;font-weight:500;color:#2b3a42}.links a:hover{color:var(--teal2)}
+.links .cta{background:var(--teal);color:#fff;padding:10px 20px;border-radius:999px}.links .cta:hover{background:var(--teal2);color:#fff}
+.burger{display:none;border:0;background:var(--tl);color:var(--teal);width:42px;height:42px;border-radius:10px;font-size:22px;cursor:pointer}
+.hero{position:relative;min-height:640px;display:flex;align-items:center;background:url(img/hero.webp) center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.94) 38%,rgba(255,255,255,.55) 62%,rgba(255,255,255,0) 85%)}
+.hero .w{position:relative;padding:80px 0}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--tl);color:var(--teal);font-weight:700;font-size:13.5px;padding:6px 14px;border-radius:999px;margin-bottom:22px}.pill:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sun)}
+.hero h1{font-size:clamp(36px,5vw,62px);margin:0;font-weight:900;letter-spacing:.02em;color:var(--teal)}
+.hero p{font-size:clamp(17px,1.5vw,19px);color:#33454d;max-width:540px;margin:18px 0 32px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;font-size:15.5px;transition:.2s}
+.btn.p{background:var(--teal);color:#fff}.btn.p:hover{background:var(--teal2)}.btn.o{background:#fff;color:var(--teal);box-shadow:inset 0 0 0 2px var(--teal)}.btn.l{background:#06c755;color:#fff}.btn.y{background:var(--sun);color:var(--ink)}
+.trust{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap}.trust div{font-size:14px;color:var(--mut)}.trust b{display:block;font-family:var(--num);font-size:30px;color:var(--ink);font-weight:800;line-height:1.2}
+section{padding:100px 0}.soft{background:var(--soft)}
+.sh{max-width:680px;margin-bottom:50px}.sh .k{color:var(--teal2);font-weight:700;font-size:14px;letter-spacing:.12em}
+.sh h2{font-size:clamp(28px,3.2vw,38px);margin:8px 0 12px;font-weight:900}.sh p{color:var(--mut);margin:0}.sh.c{text-align:center;margin-inline:auto}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 28px;transition:.25s}.card:hover{border-color:var(--teal2);box-shadow:0 14px 40px -18px rgba(14,74,90,.35);transform:translateY(-3px)}
+.ic{width:52px;height:52px;border-radius:14px;background:var(--tl);display:grid;place-items:center;margin-bottom:18px}.ic svg{width:26px;height:26px;stroke:var(--teal);fill:none;stroke-width:1.8}
+.card h3{margin:0 0 8px;font-size:20px}.card p{margin:0 0 14px;color:var(--mut);font-size:15px}
+.card ul{margin:0;padding:0;list-style:none;font-size:14.5px}.card li{padding:4px 0 4px 24px;position:relative}.card li:before{content:"";position:absolute;left:2px;top:12px;width:12px;height:7px;border-left:2px solid var(--teal2);border-bottom:2px solid var(--teal2);transform:rotate(-45deg)}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.split img{border-radius:22px;aspect-ratio:5/4;object-fit:cover;width:100%}
+.feat{display:grid;gap:22px;margin-top:10px}.feat>div{display:grid;grid-template-columns:44px 1fr;gap:16px}.feat b{font-family:var(--num);width:44px;height:44px;border-radius:50%;background:var(--sun);display:grid;place-items:center;font-weight:800}
+.feat h3{margin:0;font-size:18px}.feat p{margin:2px 0 0;color:var(--mut);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.chips span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:14.5px;font-weight:500}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{background:#fff;border:1px solid var(--line);border-radius:22px;padding:34px 30px;display:flex;flex-direction:column}
+.plan.hot{background:var(--teal);color:#fff;border-color:var(--teal);position:relative}.plan.hot .tag{position:absolute;top:-13px;left:30px;background:var(--sun);color:var(--ink);font-size:13px;font-weight:700;padding:3px 12px;border-radius:999px}
+.plan h3{margin:0;font-size:20px}.plan .who{font-size:14px;color:var(--mut);margin:4px 0 18px}.plan.hot .who{color:#b9d6dd}
+.price{font-family:var(--num);font-size:42px;font-weight:800;line-height:1}.price small{font-family:var(--sans);font-size:15px;font-weight:500;color:var(--mut)}.plan.hot .price small{color:#b9d6dd}
+.plan ul{list-style:none;padding:0;margin:24px 0 28px;font-size:15px;flex:1}.plan li{padding:8px 0;border-top:1px solid var(--line)}.plan.hot li{border-color:rgba(255,255,255,.15)}
+.plan .btn{width:100%}
+.fine{font-size:13.5px;color:var(--mut);margin-top:20px}
+.cal{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.mo{background:#fff;border-radius:16px;padding:20px 18px;border:1px solid var(--line)}.mo b{font-family:var(--num);font-size:26px;color:var(--teal);font-weight:800}.mo b small{font-size:14px;font-family:var(--sans)}
+.mo p{margin:6px 0 0;font-size:14px;color:#33454d;line-height:1.6}.mo.big{background:var(--teal);border-color:var(--teal)}.mo.big b,.mo.big p{color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{position:relative;padding-top:64px}.step:before{counter-increment:s;content:"0" counter(s);position:absolute;top:0;left:0;font-family:var(--num);font-size:44px;font-weight:800;color:var(--tl);-webkit-text-stroke:1.5px var(--teal2)}
+.step h3{margin:0 0 6px;font-size:19px}.step p{margin:0;color:var(--mut);font-size:15px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.cpa{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px;display:grid;grid-template-columns:76px 1fr;gap:18px;align-items:start}
+.av{width:76px;height:76px;border-radius:50%;background:linear-gradient(135deg,var(--teal2),var(--teal));color:#fff;display:grid;place-items:center;font-size:30px;font-weight:700}
+.cpa h3{margin:0;font-size:20px}.cpa .r{color:var(--teal2);font-size:14px;font-weight:700}.cpa p{margin:10px 0 0;font-size:14.5px;color:var(--mut)}
+.cpa .tags{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}.cpa .tags span{background:var(--tl);color:var(--teal);font-size:13px;padding:3px 10px;border-radius:6px;font-weight:500}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.gal img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:16px}.gal img:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto;height:100%}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.qt{background:#fff;border-radius:20px;padding:30px;border:1px solid var(--line)}.qt .st{color:var(--sun);letter-spacing:3px;font-size:18px}.qt p{margin:10px 0 18px;font-size:15.5px}.qt span{font-size:14px;color:var(--mut)}.qt span b{color:var(--ink);display:block}
+.faq{max-width:860px;margin:auto}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 24px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}summary::-webkit-details-marker{display:none}
+summary:after{content:"";flex:none;width:26px;height:26px;border-radius:50%;background:var(--tl) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230e4a5a' stroke-width='2.4'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E") center/16px no-repeat;transition:.2s}details[open] summary:after{transform:rotate(180deg)}
+details p{margin:10px 0 0;color:var(--mut);font-size:15px}
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:28px}
+.cbox{background:var(--teal);color:#fff;border-radius:24px;padding:40px}
+.cbox h3{margin:0 0 20px;font-size:24px}.cbox .it{display:grid;grid-template-columns:90px 1fr;padding:12px 0;border-top:1px solid rgba(255,255,255,.14);font-size:15px}.cbox .it span{color:#a9cdd5}
+.cbox .btns{margin-top:26px}
+.map{border-radius:24px;overflow:hidden;min-height:420px;border:1px solid var(--line)}.map iframe{width:100%;height:100%;min-height:420px;border:0}
+.band{background:linear-gradient(120deg,var(--teal),var(--teal2));color:#fff;border-radius:28px;padding:54px 56px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+.band h2{margin:0;font-size:clamp(24px,2.8vw,32px);font-weight:900}.band p{margin:6px 0 0;color:#cfe3e8}
+footer{background:#0b2730;color:#97adb4;padding:64px 0 36px;font-size:14px}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:36px;padding-bottom:34px;border-bottom:1px solid rgba(255,255,255,.08)}
+footer h4{color:#fff;margin:0 0 12px;font-size:15px}footer ul{list-style:none;margin:0;padding:0;line-height:2.1}footer a{text-decoration:none}footer a:hover{color:#fff}
+.legal{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding-top:22px;font-size:12.5px;color:#6f8a92}.legal a{color:var(--sun)}
+.mbar{display:none}.nb{display:inline-block}
+@media(max-width:1020px){.svc,.plans,.quotes{grid-template-columns:1fr 1fr}.team{grid-template-columns:1fr}.cal{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:1fr 1fr}.fg{grid-template-columns:1fr 1fr}}
+@media(max-width:780px){
+ .top{display:none}.w{width:calc(100% - 36px)}section{padding:70px 0}
+ .links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:6px 18px 18px;border-bottom:1px solid var(--line);box-shadow:0 20px 30px -20px #0003}.links.open{display:flex}.links a{padding:13px 4px;border-bottom:1px solid var(--line)}.links .cta{text-align:center;margin-top:12px;border:0}
+ .burger{display:block}
+ .hero{min-height:auto;align-items:flex-end;background-position:70% center}.hero:before{background:linear-gradient(180deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,.92) 42%,#fff 70%)}
+ .hero .w{padding:200px 0 46px}.btns{display:grid;grid-template-columns:1fr 1fr}.btn{padding:13px 10px}.trust{gap:22px}.trust b{font-size:24px}
+ .svc,.plans,.quotes,.split,.contact{grid-template-columns:1fr}.split{gap:34px}.plan.hot{margin-top:10px}
+ .cal{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr}.step{padding:0 0 0 76px;min-height:56px}.step:before{font-size:38px}
+ .gal{grid-template-columns:1fr 1fr}.cpa{padding:24px;grid-template-columns:62px 1fr}.av{width:62px;height:62px;font-size:24px}
+ .band{padding:36px 26px}.cbox{padding:30px 24px}.fg{grid-template-columns:1fr}
+ .mbar{display:grid;grid-template-columns:1fr 1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px -10px #0003}
+ .mbar a{text-align:center;padding:12px 0;font-size:14px;font-weight:700;text-decoration:none;color:var(--teal)}.mbar a.l{background:#06c755;color:#fff}.mbar a.p{background:var(--teal);color:#fff}
+ footer{padding-bottom:90px}
+}
+p{text-wrap:pretty}
+</style>
 </head>
 <body>
-  <div class="shell">
-    <aside>
-      <div class="mark">朗冊<span>聯合會計師事務所</span></div>
-      <nav aria-label="頁內">
-        <a href="#services">服務項目</a>
-        <a href="#flow">委任流程</a>
-        <a href="#visit">聯絡</a>
-        <a href="../../index.html">返回 Kova</a>
-      </nav>
-      <p class="side-note">本頁為版型示範，不是會計或稅務意見。</p>
-    </aside>
-    <main>
-      <p class="label">CPA</p>
-      <h1>數字整齊，事情才推進。</h1>
-      <p class="intro">朗冊協助診所、工作室與小型公司處理記帳、申報與報表。委託範圍在開始前寫清楚，不做含糊的「都包在裡面」。</p>
-      <div class="stats" aria-label="服務分類">
-        <div><strong>記帳</strong><span>憑證與日常帳</span></div>
-        <div><strong>稅務</strong><span>申報與期限</span></div>
-        <div><strong>報表</strong><span>給決策用的數字</span></div>
-        <div><strong>設立</strong><span>文書與變更</span></div>
-      </div>
+<div class="top"><div class="w"><span>週一至週五 09:00–18:00　｜　報稅季（5月）週六加開服務</span><a href="tel:+886200000000">客服專線 02-0000-0000</a></div></div>
+<header class="nav"><div class="w">
+ <a class="brand" href="#top"><i>朗</i><span><b>朗冊聯合會計師事務所</b><small>LANGCE CPA FIRM</small></span></a>
+ <nav class="links" id="links"><a href="#services">服務項目</a><a href="#plans">記帳方案</a><a href="#calendar">報稅時程</a><a href="#team">會計師團隊</a><a href="#faq">常見問題</a><a class="cta" href="#contact">免費諮詢</a></nav>
+ <button class="burger" id="burger" aria-label="選單">☰</button>
+</div></header>
 
-      <section id="services">
-        <h2>服務項目</h2>
-        <table>
-          <tbody>
-            <tr>
-              <th>記帳與憑證</th>
-              <td>整理進銷項憑證，維持可核對的帳。缺件會列出，不默默補一個看起來漂亮的數字。</td>
-            </tr>
-            <tr>
-              <th>營業稅申報</th>
-              <td>依期限整理申報資料。實際稅額以申報內容與法令為準。</td>
-            </tr>
-            <tr>
-              <th>營利事業所得稅</th>
-              <td>協助結算申報的資料準備與檢核。本頁不預測稅額。</td>
-            </tr>
-            <tr>
-              <th>財務報表</th>
-              <td>編製給內部看的報表，標出需要你確認的科目。</td>
-            </tr>
-            <tr>
-              <th>設立與變更</th>
-              <td>公司設立、負責人與地址變更的文書諮詢，程序依主管機關規定。</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+<section class="hero" id="top" style="padding:0"><div class="w">
+ <span class="pill">台北松山・記帳報稅與財務簽證</span>
+ <h1><span class="nb">朗冊聯合</span><span class="nb">會計師事務所</span></h1>
+ <p>為公司行號、工作室與個人提供記帳、營業稅與營所稅申報、公司設立變更、財務簽證及稅務規劃服務。</p>
+ <div class="btns"><a class="btn p" href="#contact">預約免費諮詢</a><a class="btn o" href="tel:+886200000000">02-0000-0000</a><a class="btn l" href="#contact">LINE 詢問</a><a class="btn y" href="#map">事務所位置</a></div>
+ <div class="trust"><div><b>320+</b>長期委任客戶</div><div><b>15 年</b>執業經驗</div><div><b>2 位</b>執業會計師</div><div><b>1 天</b>內回覆諮詢</div></div>
+</div></section>
 
-      <section class="panel" id="flow">
-        <h2>委任流程</h2>
-        <div class="flow">
-          <article><b>01</b>說明行業與目前的帳務狀態</article>
-          <article><b>02</b>確認範圍、頻率與文件交接方式</article>
-          <article><b>03</b>開始記帳或申報準備</article>
-          <article><b>04</b>固定回報需要你補的資料</article>
-        </div>
-      </section>
+<section id="services"><div class="w">
+ <div class="sh"><div class="k">SERVICES</div><h2>服務項目</h2><p>從開公司的第一天到每年的結算申報，一家事務所就能處理。每項委託都會先確認範圍與費用，再開始作業。</p></div>
+ <div class="svc">
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></div><h3>公司行號記帳</h3><p>每月或每兩個月收取憑證，代為登帳並整理進銷項。</p><ul><li>憑證整理與分類入帳</li><li>每期帳務報表寄送</li><li>雲端憑證上傳，免跑事務所</li></ul></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div><h3>營業稅申報</h3><p>依單月 15 日期限申報營業稅，並檢核發票與扣抵資料。</p><ul><li>401 / 403 申報書製作</li><li>零稅率、外銷資料整理</li><li>申報前寄送應納稅額通知</li></ul></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div><h3>營利事業所得稅</h3><p>年度結算申報、未分配盈餘申報與暫繳申報。</p><ul><li>書審、擴大書審、查帳申報評估</li><li>帳載與稅務調整說明</li><li>國稅局函查協助回覆</li></ul></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg></div><h3>個人綜合所得稅</h3><p>5 月綜所稅申報代辦，適合有租賃、股利或執行業務收入者。</p><ul><li>扣除額試算比較</li><li>執行業務所得帳簿</li><li>房地合一稅申報</li></ul></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></div><h3>公司設立與變更</h3><p>行號、有限公司、股份有限公司設立登記與後續變更。</p><ul><li>組織型態與資本額建議</li><li>名稱預查、設立登記、稅籍登記</li><li>增資、遷址、負責人變更</li></ul></div>
+  <div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg></div><h3>財務簽證與稅務規劃</h3><p>財務報表查核簽證、所得稅簽證，以及家族與企業稅務規劃。</p><ul><li>財報查核、所得稅查核簽證</li><li>增資驗資、資本額查核</li><li>贈與、遺產稅務諮詢</li></ul></div>
+ </div>
+</div></section>
 
-      <section class="visit" id="visit">
-        <article>
-          <h2>事務所</h2>
-          <p>臺北市松山區示範路二段 88 號 8 樓</p>
-          <p>週一至週五 09:00–18:00</p>
-        </article>
-        <article>
-          <h2>電話</h2>
-          <p class="phone">02-0000-0000</p>
-          <p>示範號碼，請勿撥打。</p>
-        </article>
-      </section>
-
-      <footer>
-        <p>示範作品，非真實店家。本頁不構成會計、稅務或法律意見。</p>
-        <p><a href="../../index.html">返回 Kova</a></p>
-      </footer>
-    </main>
+<section class="soft"><div class="w split">
+ <img src="img/meet.webp" alt="會計師與客戶討論" loading="lazy">
+ <div>
+  <div class="sh" style="margin-bottom:28px"><div class="k">WHY LANGCE</div><h2>把帳交給我們之後</h2><p>你只需要把憑證丟上雲端，其他的事我們會主動提醒。</p></div>
+  <div class="feat">
+   <div><b>1</b><div><h3>專人專責</h3><p>每位客戶都有固定的記帳專員與負責會計師，不用每次重新說明公司狀況。</p></div></div>
+   <div><b>2</b><div><h3>期限主動提醒</h3><p>報稅前兩週以 LINE 與 Email 提醒需要補的資料與預估稅額，不讓你錯過期限。</p></div></div>
+   <div><b>3</b><div><h3>看得懂的報表</h3><p>每期附上簡易損益摘要，標出異常科目，讓老闆一眼看懂這兩個月賺了多少。</p></div></div>
+   <div><b>4</b><div><h3>費用事先講清楚</h3><p>委任前提供書面報價，作業範圍與加收項目都寫明，沒有事後追加的意外。</p></div></div>
   </div>
+  <div class="chips"><span>診所・醫療院所</span><span>餐飲業</span><span>設計工作室</span><span>電商・網拍</span><span>貿易公司</span><span>補習班</span><span>新創公司</span><span>外商在台分公司</span></div>
+ </div>
+</div></section>
+
+<section id="plans"><div class="w">
+ <div class="sh c"><div class="k">PRICING</div><h2>記帳方案</h2><p>依公司規模與憑證量選擇，所有方案皆含營業稅申報與年度營所稅結算申報。</p></div>
+ <div class="plans">
+  <div class="plan"><h3>行號・工作室</h3><div class="who">小規模營業人、個人工作室</div><div class="price">2,000<small> 元／月起</small></div><ul><li>每期憑證 50 張以內</li><li>營業稅申報（或查定課徵）</li><li>年度結算申報</li><li>LINE 線上諮詢</li></ul><a class="btn o" href="#contact">詢問此方案</a></div>
+  <div class="plan hot"><span class="tag">最多客戶選擇</span><h3>中小企業</h3><div class="who">有限公司、股份有限公司</div><div class="price">3,500<small> 元／月起</small></div><ul><li>每期憑證 150 張以內</li><li>營業稅、扣繳、二代健保申報</li><li>年度結算與未分配盈餘申報</li><li>每期損益摘要與稅額預估</li></ul><a class="btn y" href="#contact">詢問此方案</a></div>
+  <div class="plan"><h3>成長型企業</h3><div class="who">多據點、進出口、有查帳需求</div><div class="price">專案<small> 報價</small></div><ul><li>憑證量不限、可駐點收件</li><li>查帳申報與財報編製</li><li>每季財務會議</li><li>會計師簽證另計</li></ul><a class="btn o" href="#contact">預約評估</a></div>
+ </div>
+ <p class="fine" style="text-align:center">※ 以上為參考起價，實際費用依憑證量、產業與作業內容報價。年度結算申報另收一個月記帳費。</p>
+</div></section>
+
+<section class="soft" id="calendar"><div class="w">
+ <div class="sh"><div class="k">TAX CALENDAR</div><h2>年度報稅時程</h2><p>重要期限一覽，委任客戶都會在截止前收到提醒。</p></div>
+ <div class="cal">
+  <div class="mo big"><b>1<small>月</small></b><p>各類所得扣繳申報、股利憑單申報、營業稅申報</p></div>
+  <div class="mo"><b>3<small>月</small></b><p>營業稅申報（1–2 月份）</p></div>
+  <div class="mo big"><b>5<small>月</small></b><p>營利事業所得稅結算、未分配盈餘申報、個人綜所稅申報</p></div>
+  <div class="mo"><b>7<small>月</small></b><p>營業稅申報（5–6 月份）</p></div>
+  <div class="mo big"><b>9<small>月</small></b><p>營利事業所得稅暫繳申報、營業稅申報</p></div>
+  <div class="mo"><b>11<small>月</small></b><p>營業稅申報（9–10 月份）、年底節稅規劃</p></div>
+ </div>
+ <p class="fine">※ 營業稅於每單月 15 日前申報前兩個月份。實際期限以財政部公告為準，遇假日順延。</p>
+</div></section>
+
+<section><div class="w">
+ <div class="sh"><div class="k">PROCESS</div><h2>委任流程</h2><p>第一次委任通常一週內即可完成交接。</p></div>
+ <div class="steps">
+  <div class="step"><h3>免費諮詢</h3><p>電話或 LINE 說明公司型態、產業與每月發票量，約 20 分鐘。</p></div>
+  <div class="step"><h3>書面報價</h3><p>依需求提供方案與報價，作業範圍、期限與加收項目一次寫清楚。</p></div>
+  <div class="step"><h3>簽約交接</h3><p>簽署委任書，協助辦理稅籍委任與前任事務所帳冊交接。</p></div>
+  <div class="step"><h3>每期作業</h3><p>上傳憑證、事務所記帳申報，寄送報表與稅額通知。</p></div>
+ </div>
+</div></section>
+
+<section class="soft" id="team"><div class="w">
+ <div class="sh"><div class="k">OUR TEAM</div><h2>會計師團隊</h2><p>兩位執業會計師帶領 12 位記帳與稅務專員，分組服務不同產業客戶。</p></div>
+ <div class="team">
+  <div class="cpa"><div class="av">許</div><div><div class="r">主持會計師</div><h3>許朗庭 會計師</h3><p>國立大學會計研究所碩士。曾任大型會計師事務所審計部經理，專長財報查核簽證與企業稅務。</p></div><div class="tags"><span>查核簽證</span><span>營所稅</span><span>企業稅務規劃</span></div></div>
+  <div class="cpa"><div class="av">吳</div><div><div class="r">執業會計師</div><h3>吳冊安 會計師</h3><p>國立大學財務金融學系。專注中小企業與醫療院所記帳稅務，熟悉診所執行業務所得申報。</p></div><div class="tags"><span>醫療院所</span><span>中小企業記帳</span><span>綜所稅</span></div></div>
+  <div class="cpa"><div class="av">鄭</div><div><div class="r">稅務部經理</div><h3>鄭芷涵 經理</h3><p>記帳士資格，從事記帳與稅務工作逾 12 年，負責公司設立變更與日常帳務品質管理。</p></div><div class="tags"><span>公司設立</span><span>營業稅</span><span>工商登記</span></div></div>
+ </div>
+</div></section>
+
+<section><div class="w">
+ <div class="sh"><div class="k">OFFICE</div><h2>事務所環境</h2></div>
+ <div class="gal"><img src="img/office.webp" alt="事務所辦公區" loading="lazy"><img src="img/lounge.webp" alt="接待區" loading="lazy"><img src="img/desk.webp" alt="帳務作業" loading="lazy"><img src="img/calc.webp" alt="憑證整理" loading="lazy"><img src="img/charts.webp" alt="財務報表" loading="lazy"></div>
+</div></section>
+
+<section class="soft"><div class="w">
+ <div class="sh c"><div class="k">CLIENTS</div><h2>客戶怎麼說</h2></div>
+ <div class="quotes">
+  <div class="qt"><div class="st">★★★★★</div><p>開診所之後才發現帳務這麼複雜，吳會計師把執行業務所得和健保收入的處理講得很清楚，每年報稅都很安心。</p><span><b>內科診所</b>委任 6 年</span></div>
+  <div class="qt"><div class="st">★★★★★</div><p>以前要自己把發票寄過去，現在用手機拍照上傳就好。報稅前會先收到稅額預估，資金可以提早準備。</p><span><b>設計工作室</b>委任 3 年</span></div>
+  <div class="qt"><div class="st">★★★★★</div><p>從公司設立一路協助到增資，有問題 LINE 問很快就有回覆，對新創公司來說幫助很大。</p><span><b>電商新創公司</b>委任 2 年</span></div>
+ </div>
+</div></section>
+
+<section id="faq"><div class="w">
+ <div class="sh c"><div class="k">FAQ</div><h2>常見問題</h2></div>
+ <div class="faq">
+  <details open><summary>剛成立的公司，什麼時候需要開始記帳？</summary><p>公司完成設立登記並辦理稅籍登記後，從第一張發票開始就需要記帳，第一期營業稅也要按時申報。建議在設立前就先諮詢，一併規劃組織型態與發票類型。</p></details>
+  <details><summary>想從其他事務所轉過來，會很麻煩嗎？</summary><p>不會。我們會協助向前任事務所調閱帳冊與申報資料，並辦理稅籍委任變更，您只需要簽署委任書。年中轉換也可以。</p></details>
+  <details><summary>憑證要怎麼交給事務所？</summary><p>可使用雲端上傳、LINE 傳送照片，或每期以掛號寄送正本。台北市區客戶也可預約專人收件。</p></details>
+  <details><summary>行號和公司有什麼差別？該選哪一種？</summary><p>行號設立簡便、負責人負無限責任；公司則為有限責任，較適合有合夥、募資或對外承攬需求的事業。會依您的營業額與規劃說明兩者在稅負與責任上的差異。</p></details>
+  <details><summary>收到國稅局的函查通知怎麼辦？</summary><p>請先別擔心，將通知拍照傳給負責專員。委任客戶的函查回覆由我們協助準備資料與說明，非委任客戶也可預約單次諮詢。</p></details>
+  <details><summary>個人綜所稅也可以委託嗎？</summary><p>可以。特別是有租金收入、執行業務所得、海外所得或房地交易的人，委託會計師試算與申報可以避免漏報。</p></details>
+ </div>
+</div></section>
+
+<section id="contact" class="soft"><div class="w">
+ <div class="band" style="margin-bottom:40px"><div><h2>第一次諮詢免費，20 分鐘了解你的帳務狀況</h2><p>來電、LINE 或直接到事務所，我們會先聽你的需求，再提供方案。</p></div><a class="btn y" href="tel:+886200000000">立即來電 02-0000-0000</a></div>
+ <div class="contact">
+  <div class="cbox"><h3>聯絡朗冊</h3>
+   <div class="it"><span>地址</span>台北市松山區南京東路四段 000 號 8 樓</div>
+   <div class="it"><span>電話</span><a href="tel:+886200000000">02-0000-0000</a></div>
+   <div class="it"><span>Email</span>hello@langce-cpa.example</div>
+   <div class="it"><span>服務時間</span>週一至週五 09:00–18:00<br>5 月報稅季週六 09:00–13:00</div>
+   <div class="it"><span>交通</span>捷運台北小巨蛋站 3 號出口步行約 3 分鐘，大樓地下室設有付費停車場</div>
+   <div class="btns"><a class="btn y" href="tel:+886200000000">撥打電話</a><a class="btn l" href="#contact">加入 LINE</a></div>
+  </div>
+  <div class="map" id="map"><iframe loading="lazy" title="地圖" src="https://www.google.com/maps?q=台北市松山區南京東路四段&z=16&hl=zh-TW&output=embed"></iframe></div>
+ </div>
+</div></section>
+
+<footer><div class="w">
+ <div class="fg">
+  <div><h4>朗冊聯合會計師事務所</h4><p style="margin:0">記帳報稅・公司設立・財務簽證・稅務規劃<br>台北市松山區南京東路四段 000 號 8 樓<br>02-0000-0000</p></div>
+  <div><h4>服務項目</h4><ul><li><a href="#services">公司記帳</a></li><li><a href="#services">營業稅申報</a></li><li><a href="#services">公司設立變更</a></li><li><a href="#services">財務簽證</a></li></ul></div>
+  <div><h4>關於我們</h4><ul><li><a href="#team">會計師團隊</a></li><li><a href="#plans">記帳方案</a></li><li><a href="#calendar">報稅時程</a></li><li><a href="#faq">常見問題</a></li></ul></div>
+  <div><h4>聯絡</h4><ul><li>週一至週五 09:00–18:00</li><li><a href="tel:+886200000000">02-0000-0000</a></li><li><a href="#contact">預約諮詢 →</a></li></ul></div>
+ </div>
+ <div class="legal"><span>© 朗冊聯合會計師事務所　網站內容為一般性說明，實際稅務處理以個案及法令規定為準。</span><span>示範作品，非真實店家 · 網站設計 <a href="https://kova.tw">Kova</a> · 照片 Unsplash</span></div>
+</div></footer>
+<div class="mbar"><a href="tel:+886200000000">撥打電話</a><a class="l" href="#contact">LINE</a><a class="p" href="#contact">免費諮詢</a></div>
+<script>
+const links=document.getElementById('links');document.getElementById('burger').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>links.classList.remove('open'));
+</script>
 </body>
 </html>

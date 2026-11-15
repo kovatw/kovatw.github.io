@@ -1,139 +1,262 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="dark">
-  <title>泊燈料理｜示範頁</title>
-  <meta name="description" content="泊燈料理示範頁。當季小館，虛構店家。">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23100e0c'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23c9864a'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #100e0c;
-      --ink: #f3ede4;
-      --muted: #c8bfb2;
-      --ember: #c9864a;
-      --line: rgba(243, 237, 228, 0.16);
-      --serif: "Noto Serif TC", "Iowan Old Style", Palatino, serif;
-      --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      color-scheme: dark;
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.75; }
-    a { color: var(--ink); }
-    img { max-width: 100%; display: block; }
-    :focus-visible { outline: 2px solid var(--ember); outline-offset: 3px; }
-    .hero { position: relative; min-height: 100svh; display: grid; align-items: end; }
-    .hero img.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .hero .shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16, 14, 12, 0.25) 0%, rgba(16, 14, 12, 0.28) 40%, rgba(16, 14, 12, 0.88) 100%); }
-    .topbar { position: absolute; z-index: 2; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; gap: 12px; padding: 22px 28px; align-items: center; }
-    .topbar a { text-decoration: none; letter-spacing: 0.18em; font-size: 0.92rem; }
-    .hero-copy { position: relative; z-index: 1; padding: 0 28px 64px; max-width: 760px; }
-    .eyebrow { letter-spacing: 0.28em; color: var(--ember); font-size: 0.78rem; margin: 0 0 12px; }
-    h1 { margin: 0; font-family: var(--serif); font-weight: 500; font-size: clamp(4rem, 12vw, 7.5rem); line-height: 0.95; letter-spacing: 0.08em; }
-    .hero-copy p { margin: 16px 0 0; max-width: 24em; color: var(--muted); font-size: 1.05rem; }
-    .vlabel { position: absolute; z-index: 2; right: 28px; bottom: 72px; writing-mode: vertical-rl; letter-spacing: 0.45em; font-family: var(--serif); color: rgba(243, 237, 228, 0.8); }
-    .wrap { width: min(1040px, calc(100% - 40px)); margin: 0 auto; }
-    .menu { padding: 72px 0 20px; }
-    .menu h2 { font-family: var(--serif); font-weight: 500; font-size: 2rem; margin: 0 0 8px; }
-    .note { color: var(--muted); margin: 0 0 28px; }
-    .dishes { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 48px; }
-    .dish { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
-    .dish b { font-weight: 500; }
-    .dish span { display: block; color: var(--muted); font-size: 0.92rem; font-weight: 400; }
-    .price { font-variant-numeric: tabular-nums; color: var(--ember); }
-    .gallery { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 12px; padding: 36px 0 10px; }
-    .gallery figure { margin: 0; }
-    .gallery img { width: 100%; height: 100%; object-fit: cover; min-height: 240px; }
-    .gallery figcaption { color: var(--muted); font-size: 0.85rem; padding-top: 8px; }
-    .stack { display: grid; gap: 12px; }
-    .reserve { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; padding: 64px 0 72px; align-items: end; }
-    .reserve h2 { font-family: var(--serif); font-weight: 500; font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 12px; line-height: 1.3; }
-    .phone { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem); margin: 8px 0; letter-spacing: 0.04em; }
-    .hours { border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); }
-    footer { border-top: 1px solid var(--line); padding: 24px 0 36px; color: var(--muted); font-size: 0.9rem; }
-    footer a { color: var(--ember); }
-    @media (max-width: 800px) {
-      .dishes, .gallery, .reserve { grid-template-columns: 1fr; }
-      .vlabel { display: none; }
-      .topbar, .hero-copy { padding-left: 18px; padding-right: 18px; }
-      .hero { min-height: 92svh; }
-      h1 { letter-spacing: 0.04em; }
-      .gallery img { min-height: 220px; max-height: 320px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>泊燈料理｜台北大安 日式割烹・無菜單料理・包廂</title>
+<meta name="description" content="泊燈料理是位於台北大安區的日式割烹，提供主廚套餐、單點料理與清酒，設有吧台座位與包廂，歡迎訂位聚餐與商務宴客。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23131110'/%3E%3Cpath d='M11 9h10l-2 12h-6z' fill='none' stroke='%23d9a45b' stroke-width='1.6'/%3E%3Ccircle cx='16' cy='15' r='2' fill='%23d9a45b'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#131110;--bg2:#1b1816;--bg3:#221e1b;--amber:#d9a45b;--amber2:#f0cf9a;--paper:#efe7da;--mut:#a89c8c;--line:rgba(217,164,91,.22);--serif:"Noto Serif TC",serif;--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;--lat:"Cormorant Garamond",serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{margin:0;background:var(--bg);color:var(--paper);font-family:var(--sans);line-height:1.9;font-size:16px;letter-spacing:.03em;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit}h1,h2,h3{font-family:var(--serif);font-weight:500;text-wrap:balance;line-height:1.45}p{text-wrap:pretty}
+.w{width:min(1180px,calc(100% - 48px));margin:0 auto}
+.nav{position:fixed;inset:0 0 auto;z-index:50;transition:.35s}.nav.solid{background:rgba(19,17,16,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .w{height:74px;display:flex;align-items:center;justify-content:space-between}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:12px}.brand b{font-family:var(--serif);font-size:23px;font-weight:600;letter-spacing:.3em}.brand small{font-family:var(--lat);font-style:italic;color:var(--amber);font-size:15px;letter-spacing:.1em}
+.links{display:flex;gap:30px;align-items:center}.links a{text-decoration:none;font-size:14.5px;letter-spacing:.16em;color:#d9cfc1}.links a:hover{color:var(--amber2)}
+.links .cta{border:1px solid var(--amber);color:var(--amber2);padding:8px 20px}.links .cta:hover{background:var(--amber);color:var(--bg)}
+.burger{display:none;background:none;border:0;color:var(--paper);font-size:26px;cursor:pointer}
+.hero{position:relative;height:100vh;height:100svh;min-height:640px;display:flex;align-items:center;justify-content:center;text-align:center;background:#000 url(img/hero.webp) center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(10,9,8,.66) 0%,rgba(10,9,8,.82) 70%),linear-gradient(180deg,rgba(10,9,8,.5),transparent 30%,transparent 70%,var(--bg))}
+.hero .in{position:relative;padding:0 20px}
+.hero .en{font-family:var(--lat);font-style:italic;color:var(--amber2);font-size:20px;letter-spacing:.14em;margin:0}
+.hero h1{font-size:clamp(46px,8vw,96px);margin:6px 0 0;letter-spacing:.32em;padding-left:.32em;font-weight:600}
+.hero .d{font-size:clamp(16px,1.6vw,19px);color:#e2d8ca;margin:14px 0 6px;letter-spacing:.12em}
+.hero .t{color:var(--mut);font-size:14.5px;letter-spacing:.14em;margin:0 0 40px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;justify-content:center;align-items:center;padding:14px 30px;text-decoration:none;font-size:14.5px;letter-spacing:.18em;transition:.25s}
+.btn.a{background:var(--amber);color:var(--bg)}.btn.a:hover{background:var(--amber2)}.btn.g{border:1px solid rgba(239,231,218,.45)}.btn.g:hover{border-color:var(--amber);color:var(--amber2)}.btn.l{background:#06c755;color:#fff}
+.scroll{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-family:var(--lat);letter-spacing:.3em;font-size:12px;color:var(--mut)}.scroll:after{content:"";display:block;width:1px;height:40px;background:var(--amber);margin:10px auto 0}
+section{padding:120px 0}
+.sh{margin-bottom:60px}.sh .en{font-family:var(--lat);font-style:italic;color:var(--amber);font-size:20px;letter-spacing:.08em}
+.sh h2{font-size:clamp(28px,3.4vw,40px);margin:4px 0 0;letter-spacing:.2em}.sh p{color:var(--mut);margin:16px 0 0;max-width:600px}.sh.c{text-align:center}.sh.c p{margin-inline:auto}
+.orn{display:flex;align-items:center;gap:14px;color:var(--amber);margin-top:18px}.orn:before,.orn:after{content:"";height:1px;width:46px;background:var(--amber);opacity:.6}.sh.c .orn{justify-content:center}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.stack{position:relative;height:600px}.stack img{position:absolute;object-fit:cover}.stack .a{width:72%;height:78%;top:0;left:0}.stack .b{width:52%;height:52%;right:0;bottom:0;border:10px solid var(--bg)}
+.intro p{color:#cfc5b6}.sig{display:flex;gap:40px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}.sig b{font-family:var(--lat);font-size:40px;color:var(--amber2);font-weight:500;display:block;line-height:1}.sig span{font-size:13.5px;color:var(--mut);letter-spacing:.1em}
+.bg2{background:var(--bg2)}
+.courses{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.course{border:1px solid var(--line);padding:42px 34px;background:var(--bg);position:relative;display:flex;flex-direction:column}
+.course.f{background:linear-gradient(180deg,#2a221b,#1a1613);border-color:var(--amber)}
+.course .lb{font-family:var(--lat);font-style:italic;color:var(--amber);font-size:17px}.course h3{font-size:25px;margin:4px 0 4px;letter-spacing:.16em}
+.course .pr{font-family:var(--lat);font-size:36px;color:var(--amber2);line-height:1.2}.course .pr small{font-family:var(--sans);font-size:13px;color:var(--mut);letter-spacing:.1em}
+.course ol{list-style:none;margin:24px 0 26px;padding:0;flex:1;counter-reset:c}.course li{display:grid;grid-template-columns:52px 1fr;padding:9px 0;border-top:1px dashed rgba(239,231,218,.1);font-size:15px}
+.course li span{color:var(--amber);font-family:var(--serif);font-size:13.5px;letter-spacing:.1em}.course li em{font-style:normal;color:var(--mut);font-size:13px;display:block}
+.course .ft{font-size:13px;color:var(--mut)}
+.menu{display:grid;grid-template-columns:1fr 1fr;gap:20px 80px}
+.mcat h3{font-size:21px;letter-spacing:.24em;color:var(--amber2);margin:0 0 6px;display:flex;align-items:baseline;gap:12px}.mcat h3 small{font-family:var(--lat);font-style:italic;color:var(--mut);font-size:15px;letter-spacing:.06em}
+.dish{display:grid;grid-template-columns:1fr auto;gap:2px 16px;padding:14px 0;border-bottom:1px solid rgba(239,231,218,.08)}
+.dish b{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:.06em}.dish i{font-style:normal;font-family:var(--lat);font-size:21px;color:var(--amber2)}
+.dish i.tx{font-family:var(--serif);font-size:15px;align-self:center}.dish p{grid-column:1/-1;margin:0;font-size:14px;color:var(--mut);line-height:1.7}
+.mnote{text-align:center;margin-top:46px;color:var(--mut);font-size:13.5px}
+.feature{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:70px}.feature figure{margin:0;position:relative;overflow:hidden;aspect-ratio:3/4}.feature img{width:100%;height:100%;object-fit:cover;transition:.8s}.feature figure:hover img{transform:scale(1.05)}
+.feature figcaption{position:absolute;inset:auto 0 0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(0,0,0,.8));font-family:var(--serif);letter-spacing:.12em}.feature figcaption small{display:block;font-family:var(--lat);font-size:18px;color:var(--amber2)}
+.drinks{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dk{border-top:1px solid var(--amber);padding-top:24px}.dk h3{margin:0 0 12px;font-size:20px;letter-spacing:.16em}
+.dk ul{list-style:none;margin:0;padding:0;font-size:15px}.dk li{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(239,231,218,.07)}.dk li span{color:var(--amber2);font-family:var(--lat);font-size:18px}
+.chef{display:grid;grid-template-columns:1.1fr 1fr;gap:0;background:var(--bg3)}
+.chef img{width:100%;height:100%;object-fit:cover;min-height:520px}.chef .tx{padding:70px 64px}
+.chef h3{font-size:30px;letter-spacing:.24em;margin:6px 0 20px}.chef .rl{font-family:var(--lat);font-style:italic;color:var(--amber);font-size:18px}
+.chef p{color:#cfc5b6;margin:0 0 14px}.chef ul{margin:22px 0 0;padding:0;list-style:none;font-size:14.5px;color:var(--mut)}.chef li{padding:6px 0;border-top:1px solid rgba(239,231,218,.08)}.chef li b{color:var(--paper);font-weight:500;margin-right:12px}
+.rooms{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.room img{width:100%;aspect-ratio:4/3;object-fit:cover}.room h3{font-size:21px;letter-spacing:.16em;margin:20px 0 4px}.room .cap{color:var(--amber2);font-size:14px;letter-spacing:.1em}.room p{color:var(--mut);margin:8px 0 0;font-size:14.5px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:260px 260px;grid-template-areas:"a b b c" "a d e f";gap:6px}.gal img{width:100%;height:100%;object-fit:cover}
+.gal .t{grid-row:span 2}.gal .wd{grid-column:span 2}
+.rsv{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.rules{list-style:none;padding:0;margin:0;counter-reset:r}.rules li{counter-increment:r;display:grid;grid-template-columns:48px 1fr;padding:16px 0;border-bottom:1px solid rgba(239,231,218,.08);font-size:15px;color:#d6ccbe}
+.rules li:before{content:"0" counter(r);font-family:var(--lat);color:var(--amber);font-size:22px;line-height:1.4}
+.hrs{border:1px solid var(--line);padding:40px}.hrs h3{margin:0 0 18px;font-size:22px;letter-spacing:.2em}
+.hrs table{width:100%;border-collapse:collapse;font-size:15px}.hrs td{padding:12px 0;border-bottom:1px solid rgba(239,231,218,.08)}.hrs td:last-child{text-align:right;color:var(--amber2)}.hrs .off{color:var(--mut)!important}
+.hrs .btns{justify-content:flex-start;margin-top:28px}
+.faq{max-width:860px;margin:auto}details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:18px;letter-spacing:.08em;display:flex;justify-content:space-between;gap:20px}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-family:var(--lat);font-size:26px;color:var(--amber);line-height:1}details[open] summary:after{content:"−"}
+details p{margin:12px 0 0;color:var(--mut);font-size:15px}
+.loc{display:grid;grid-template-columns:1fr 1.4fr;border:1px solid var(--line)}
+.loc .tx{padding:50px 46px}.loc h3{margin:0 0 20px;font-size:24px;letter-spacing:.2em}.loc dl{margin:0;display:grid;grid-template-columns:64px 1fr;gap:12px;font-size:15px}.loc dt{color:var(--amber)}.loc dd{margin:0;color:#d6ccbe}
+.map iframe{width:100%;height:100%;min-height:420px;border:0;display:block;filter:invert(.9) hue-rotate(180deg) grayscale(.5) contrast(.9)}
+footer{border-top:1px solid var(--line);padding:70px 0 40px;text-align:center;color:var(--mut);font-size:14px}
+footer .bb{font-family:var(--serif);font-size:28px;letter-spacing:.4em;color:var(--paper);padding-left:.4em}footer .bs{font-family:var(--lat);font-style:italic;color:var(--amber);font-size:16px}
+footer p{margin:16px 0 0}footer nav{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin:26px 0}footer nav a{text-decoration:none;letter-spacing:.14em}footer nav a:hover{color:var(--amber2)}
+.legal{font-size:12.5px;color:#7a6f62;margin-top:30px}.legal a{color:var(--amber)}
+.mbar{display:none}.mo{display:none}@media(max-width:760px){.dt{display:none}.mo{display:inline}}
+@media(max-width:1000px){.courses,.drinks,.rooms{grid-template-columns:1fr}.course{padding:34px 28px}.menu{grid-template-columns:1fr}.feature{grid-template-columns:1fr 1fr}.chef{grid-template-columns:1fr}.chef img{min-height:340px;max-height:420px}.rsv{grid-template-columns:1fr;gap:40px}.rooms{gap:40px}}
+@media(max-width:760px){
+ .w{width:calc(100% - 36px)}section{padding:80px 0}
+ .links{display:none;position:fixed;top:74px;left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;align-items:stretch;gap:0;padding:10px 26px}.links.open{display:flex}.links a{padding:16px 0;border-bottom:1px solid var(--line);font-size:16px}.links .cta{text-align:center;margin-top:18px}
+ .burger{display:block}.hero h1{letter-spacing:.2em;padding-left:.2em}.hero .d{letter-spacing:.06em}
+ .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:100%}.btn{padding:13px 8px;letter-spacing:.1em}.hero .in{width:100%;padding:0 18px}
+ .intro{grid-template-columns:1fr;gap:50px}.stack{height:420px}.sig{gap:24px}.sig b{font-size:32px}
+ .feature{margin-top:50px}.chef .tx{padding:44px 24px}
+ .gal{grid-template-columns:1fr 1fr;grid-template-rows:repeat(4,160px);grid-template-areas:"a b" "a c" "d e" "f f"}
+ .hrs{padding:30px 22px}.loc{grid-template-columns:1fr}.loc .tx{padding:34px 24px}.map iframe{min-height:300px}
+ .mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--bg);border-top:1px solid var(--line)}
+ .mbar a{text-align:center;padding:14px 0;text-decoration:none;font-size:14.5px;letter-spacing:.14em}.mbar a.a{background:var(--amber);color:var(--bg)}
+ footer{padding-bottom:90px}
+}
+</style>
 </head>
 <body>
-  <header class="hero">
-    <img class="bg" src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?auto=format&fit=crop&w=2000&q=80" alt="燈光偏暗的餐廳座位，白桌布與酒杯">
-    <div class="shade"></div>
-    <div class="topbar">
-      <a href="#menu">泊燈</a>
-      <nav aria-label="頁內">
-        <a href="#menu">菜單</a>
-        <a href="#reserve">訂位</a>
-        <a href="../../index.html">Kova</a>
-      </nav>
-    </div>
-    <p class="vlabel">當季小館</p>
-    <div class="hero-copy">
-      <p class="eyebrow">TAIPEI · EVENING</p>
-      <h1>泊燈</h1>
-      <p>少一道，把火候留住。<br>晚餐只做當天到貨的，座位不多。</p>
-    </div>
-  </header>
+<header class="nav" id="nav"><div class="w">
+ <a class="brand" href="#top"><b>泊燈</b><small>Bodeng Kappo</small></a>
+ <nav class="links" id="links"><a href="#about">關於泊燈</a><a href="#course">套餐</a><a href="#menu">菜單</a><a href="#chef">主廚</a><a href="#space">空間包廂</a><a href="#visit">交通</a><a class="cta" href="#reserve">線上訂位</a></nav>
+ <button class="burger" id="burger" aria-label="選單">☰</button>
+</div></header>
 
-  <section class="menu wrap" id="menu">
-    <h2>今晚的單</h2>
-    <p class="note">菜單隨市場更換。下列是示意，不是固定供應。價格為虛構。</p>
-    <div class="dishes">
-      <div class="dish"><div><b>季節小菜</b><span>溫泉蛋、當季蔬菜</span></div><div class="price">220</div></div>
-      <div class="dish"><div><b>今日湯</b><span>依早上的魚與蔬</span></div><div class="price">180</div></div>
-      <div class="dish"><div><b>炭烤魚</b><span>依到貨，一份約兩人</span></div><div class="price">680</div></div>
-      <div class="dish"><div><b>主廚肉品</b><span>當日部位，火候偏熟成</span></div><div class="price">880</div></div>
-      <div class="dish"><div><b>焙茶與冰淇淋</b><span>餐末</span></div><div class="price">180</div></div>
-      <div class="dish"><div><b>當季水果</b><span>若還有</span></div><div class="price">160</div></div>
-    </div>
-  </section>
+<section class="hero" id="top" style="padding:0"><div class="in">
+ <p class="en">Japanese Kappo · Taipei</p>
+ <h1>泊燈料理</h1>
+ <p class="d">台北大安區的日式割烹<span class="dt">，</span><br class="mo">提供主廚套餐、單點料理與清酒</p>
+ <p class="t">晚餐 17:30–22:00　｜　週二至週日營業</p>
+ <div class="btns"><a class="btn a" href="#reserve">線上訂位</a><a class="btn g" href="tel:+886200000000"><span class="dt">訂位專線 02-0000-0000</span><span class="mo">來電訂位</span></a><a class="btn l" href="#reserve">LINE 訂位</a><a class="btn g" href="#visit">交通位置</a></div>
+</div><div class="scroll">SCROLL</div></section>
 
-  <section class="gallery wrap" aria-label="料理與廚房">
-    <figure>
-      <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1400&q=80" alt="白盤中的烤魚、醬汁與酒杯">
-      <figcaption>示意餐點，非本店實拍。</figcaption>
-    </figure>
-    <div class="stack">
-      <figure>
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1200&q=80" alt="精緻擺盤的前菜，背景是餐桌燈光">
-      </figure>
-      <figure>
-        <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1200&q=80" alt="廚房檯面上備料的手">
-      </figure>
-    </div>
-  </section>
+<section id="about"><div class="w intro">
+ <div class="stack"><img class="a" src="img/interior.webp" alt="泊燈用餐空間" loading="lazy"><img class="b" src="img/sushi.webp" alt="握壽司" loading="lazy"></div>
+ <div>
+  <div class="sh" style="margin-bottom:26px"><div class="en">About</div><h2>關於泊燈</h2><div class="orn">◆</div></div>
+  <p>泊燈料理開設於台北大安區的巷弄裡，以日本割烹的形式，在吧台前為客人現場料理。每天清晨從漁港與市場挑選當季的魚貨與時蔬，依食材狀態決定當晚的菜色。</p>
+  <p>我們相信料理的本質是對食材的理解。刺身講究熟成與刀工，燒物重視火候，煮物則花時間熬出高湯的層次。一道一道送到面前，讓客人吃到季節最好的味道。</p>
+  <p>店內設有 12 席吧台與兩間包廂，適合約會、家人聚餐與商務宴客。</p>
+  <div class="sig"><div><b>12</b><span>吧台座位</span></div><div><b>2</b><span>獨立包廂</span></div><div><b>40+</b><span>款日本清酒</span></div></div>
+ </div>
+</div></section>
 
-  <section class="reserve wrap" id="reserve">
-    <div>
-      <h2>想坐下來，先打電話。</h2>
-      <p>週三至週日供應晚餐。週一、週二公休。最後點餐 21:00。六人以上請提早說。</p>
-      <div class="hours">
-        <p>18:00–21:30</p>
-        <p>臺北市大安區示範路二段 18 號</p>
-      </div>
-    </div>
-    <div>
-      <p class="eyebrow">訂位</p>
-      <p class="phone">02-0000-0000</p>
-      <p>這是示範號碼，餐廳不存在。</p>
-    </div>
-  </section>
+<section class="bg2" id="course"><div class="w">
+ <div class="sh c"><div class="en">Omakase Course</div><h2>主廚套餐</h2><div class="orn">◆</div><p>菜色依當日進貨調整，以下為本季參考內容。如有食物過敏或忌口，請於訂位時告知。</p></div>
+ <div class="courses">
+  <div class="course"><div class="lb">Shun</div><h3>旬・季節套餐</h3><div class="pr">2,680 <small>／位</small></div>
+   <ol><li><span>先付</span><div>胡麻豆腐 佐海膽<em>季節開胃小品</em></div></li><li><span>椀物</span><div>蛤蜊清湯</div></li><li><span>造里</span><div>本日刺身三品</div></li><li><span>燒物</span><div>鹽烤當季鮮魚</div></li><li><span>煮物</span><div>和風燉牛舌</div></li><li><span>食事</span><div>櫻花蝦炊飯 附味噌汁</div></li><li><span>甘味</span><div>焙茶布丁</div></li></ol>
+   <div class="ft">共 7 道・約 2 小時</div></div>
+  <div class="course f"><div class="lb">Omakase</div><h3>泊・主廚特選</h3><div class="pr">4,280 <small>／位</small></div>
+   <ol><li><span>先付</span><div>季節八寸拼盤</div></li><li><span>椀物</span><div>甘鯛松笠燒 清湯</div></li><li><span>造里</span><div>熟成刺身五品</div></li><li><span>握</span><div>主廚握壽司六貫</div></li><li><span>燒物</span><div>炭烤和牛 A5 佐山葵</div></li><li><span>揚物</span><div>白子天婦羅</div></li><li><span>食事</span><div>海膽鮭魚卵丼</div></li><li><span>甘味</span><div>抹茶生巧克力・時令水果</div></li></ol>
+   <div class="ft">共 9 道・約 2.5 小時・建議吧台座位</div></div>
+  <div class="course"><div class="lb">Lunch</div><h3>晝・午間御膳</h3><div class="pr">1,280 <small>／位</small></div>
+   <ol><li><span>小鉢</span><div>季節小菜三品</div></li><li><span>造里</span><div>刺身二品</div></li><li><span>主菜</span><div>西京燒鱈魚 或 炙燒牛肉</div></li><li><span>食事</span><div>土鍋白飯・味噌汁・漬物</div></li><li><span>甘味</span><div>本日甜點</div></li></ol>
+   <div class="ft">週六、日限定・11:30–14:30</div></div>
+ </div>
+ <p class="mnote">※ 價格另加 10% 服務費。兒童（12 歲以下）可預訂兒童套餐 980 元。</p>
+</div></section>
 
-  <footer class="wrap">
-    <p>示範作品，非真實店家</p>
-    <p>照片來源：Unsplash。電話 02-0000-0000 為示意。</p>
-    <p><a href="../../index.html">返回 Kova</a></p>
-  </footer>
+<section id="menu"><div class="w">
+ <div class="sh c"><div class="en">À la carte</div><h2>單點菜單</h2><div class="orn">◆</div><p>吧台與桌席皆可單點，建議 2–3 人分享 5–6 道。</p></div>
+ <div class="menu">
+  <div class="mcat"><h3>前菜<small>Zensai</small></h3>
+   <div class="dish"><b>胡麻豆腐 佐海膽</b><i>380</i><p>自製胡麻豆腐，口感滑順，搭配北海道海膽。</p></div>
+   <div class="dish"><b>柚香涼拌時蔬</b><i>260</i><p>當季時蔬以昆布高湯浸漬，佐柚子皮。</p></div>
+   <div class="dish"><b>明太子玉子燒</b><i>280</i><p>現煎高湯玉子燒包入辛子明太子。</p></div></div>
+  <div class="mcat"><h3>刺身<small>Sashimi</small></h3>
+   <div class="dish"><b>本日刺身盛合（五品）</b><i>1,280</i><p>依當日魚貨，主廚挑選五種當季魚種。</p></div>
+   <div class="dish"><b>熟成黑鮪魚 赤身・中腹</b><i>880</i><p>冷藏熟成五日，風味更加濃郁。</p></div>
+   <div class="dish"><b>北海道帆立貝</b><i>520</i><p>厚切干貝佐海鹽與酢橘。</p></div></div>
+  <div class="mcat"><h3>燒物<small>Yakimono</small></h3>
+   <div class="dish"><b>炭烤 A5 和牛</b><i>1,680</i><p>宮崎和牛以備長炭燒烤，附山葵與岩鹽。</p></div>
+   <div class="dish"><b>鹽烤喉黑</b><i class="tx">時價</i><p>日本空運赤鯥，皮脆肉嫩，油脂豐富。</p></div>
+   <div class="dish"><b>西京燒銀鱈</b><i>620</i><p>以西京味噌醃漬三日後慢火燒烤。</p></div></div>
+  <div class="mcat"><h3>揚物・煮物<small>Agemono</small></h3>
+   <div class="dish"><b>季節天婦羅盛合</b><i>580</i><p>明蝦、季節蔬菜，佐天汁與抹茶鹽。</p></div>
+   <div class="dish"><b>和風燉牛舌</b><i>680</i><p>以高湯與清酒燉煮六小時，入口即化。</p></div>
+   <div class="dish"><b>炸豆腐 揚出汁</b><i>280</i><p>外酥內嫩，淋上溫熱的醬油高湯。</p></div></div>
+  <div class="mcat"><h3>食事<small>Shokuji</small></h3>
+   <div class="dish"><b>海膽鮭魚卵丼</b><i>980</i><p>北海道海膽與自家醃漬鮭魚卵。</p></div>
+   <div class="dish"><b>櫻花蝦土鍋炊飯（2–3 人）</b><i>680</i><p>現點現煮約 25 分鐘，建議提早點餐。</p></div>
+   <div class="dish"><b>稻庭烏龍 冷・溫</b><i>320</i><p>細滑的秋田稻庭烏龍麵。</p></div></div>
+  <div class="mcat"><h3>甘味<small>Kanmi</small></h3>
+   <div class="dish"><b>焙茶布丁</b><i>220</i><p>京都焙茶製作，甜度清爽。</p></div>
+   <div class="dish"><b>抹茶生巧克力</b><i>260</i><p>宇治抹茶與白巧克力手作。</p></div>
+   <div class="dish"><b>時令水果</b><i class="tx">時價</i><p>依季節選用日本與台灣當季水果。</p></div></div>
+ </div>
+ <p class="mnote">※ 以新台幣計價，另加 10% 服務費。部分品項依進貨狀況供應。</p>
+ <div class="feature">
+  <figure><img src="img/sushi3.webp" alt="握壽司" loading="lazy"><figcaption><small>Nigiri</small>主廚握壽司</figcaption></figure>
+  <figure><img src="img/roe.webp" alt="鮭魚卵料理" loading="lazy"><figcaption><small>Zensai</small>季節前菜</figcaption></figure>
+  <figure><img src="img/dishes.webp" alt="季節小菜" loading="lazy"><figcaption><small>Kobachi</small>小鉢三品</figcaption></figure>
+  <figure><img src="img/sushi2.webp" alt="壽司拼盤" loading="lazy"><figcaption><small>Moriawase</small>宴席盛合</figcaption></figure>
+ </div>
+</div></section>
+
+<section class="bg2"><div class="w">
+ <div class="sh c"><div class="en">Sake & Drinks</div><h2>酒水</h2><div class="orn">◆</div><p>常備 40 款以上日本清酒，可依料理請店內唎酒師推薦搭配。</p></div>
+ <div class="drinks">
+  <div class="dk"><h3>日本清酒</h3><ul><li>純米吟釀（杯）<span>280</span></li><li>純米大吟釀（杯）<span>380</span></li><li>季節限定生酒 720ml<span>2,400</span></li><li>主廚推薦 一升瓶<span>時價</span></li></ul></div>
+  <div class="dk"><h3>燒酎・梅酒</h3><ul><li>芋燒酎 水割／加冰<span>260</span></li><li>麥燒酎 水割／加冰<span>240</span></li><li>紀州南高梅酒<span>280</span></li><li>柚子酒<span>280</span></li></ul></div>
+  <div class="dk"><h3>無酒精</h3><ul><li>宇治抹茶<span>180</span></li><li>京都焙茶（熱／冰）<span>150</span></li><li>手作柚子氣泡飲<span>180</span></li><li>開瓶費（每瓶）<span>500</span></li></ul></div>
+ </div>
+</div></section>
+
+<section id="chef" style="padding:0"><div class="chef">
+ <img src="img/kitchen.webp" alt="主廚於廚房備料" loading="lazy">
+ <div class="tx"><div class="rl">Head Chef</div><h3>主廚 林泊遠</h3>
+  <p>年輕時赴日本京都學藝，在割烹料理店從洗碗、備料做起，十年間跟隨師傅學習刀工、高湯與季節料理的精神。返台後曾任飯店日本料理餐廳副主廚，2019 年創立泊燈。</p>
+  <p>「割烹」是「割」與「烹」，刀工與火候。他希望客人坐在吧台前，看著每一道料理完成，也聽聽食材背後的故事。</p>
+  <ul><li><b>經歷</b>京都割烹料理店 修業十年</li><li><b>經歷</b>台北五星飯店日本料理 副主廚</li><li><b>專長</b>熟成魚料理、季節懷石</li></ul>
+ </div>
+</div></section>
+
+<section id="space"><div class="w">
+ <div class="sh"><div class="en">Space</div><h2>空間與包廂</h2><div class="orn">◆</div></div>
+ <div class="rooms">
+  <div class="room"><img src="img/bar.webp" alt="吧台座位" loading="lazy"><h3>檜木吧台</h3><div class="cap">12 席・最適合 1–4 人</div><p>近距離欣賞主廚料理過程，主廚特選套餐建議選擇吧台座位。</p></div>
+  <div class="room"><img src="img/window.webp" alt="桌席" loading="lazy"><h3>窗邊桌席</h3><div class="cap">4 桌・每桌 2–4 人</div><p>安靜舒適的用餐空間，適合家人聚餐與朋友小聚。</p></div>
+  <div class="room"><img src="img/private.webp" alt="包廂" loading="lazy"><h3>和室包廂</h3><div class="cap">2 間・6–12 人</div><p>獨立空間附影音設備，適合商務宴客與家族聚會。包廂低消每位 3,000 元。</p></div>
+ </div>
+</div></section>
+
+<section class="bg2" style="padding:0"><div class="gal"><img style="grid-area:a" src="img/sushi.webp" alt="" loading="lazy"><img style="grid-area:b" src="img/fire.webp" alt="" loading="lazy"><img style="grid-area:c" src="img/ramen.webp" alt="" loading="lazy"><img style="grid-area:d" src="img/nigiri.webp" alt="" loading="lazy"><img style="grid-area:e" src="img/seafood.webp" alt="" loading="lazy"><img style="grid-area:f" src="img/bar.webp" alt="" loading="lazy"></div></section>
+
+<section id="reserve"><div class="w">
+ <div class="sh"><div class="en">Reservation</div><h2>訂位須知</h2><div class="orn">◆</div><p>每月 1 日中午 12:00 開放次月訂位，可透過電話或 LINE 預約。</p></div>
+ <div class="rsv">
+  <ol class="rules">
+   <li>主廚特選套餐需於用餐日 3 天前預訂，以便備料。</li>
+   <li>座位保留 15 分鐘，逾時未到將視現場狀況安排。</li>
+   <li>如需取消或更改人數，請於用餐日 2 天前告知。</li>
+   <li>包廂及 8 人以上訂位需預付訂金，用餐當日折抵消費。</li>
+   <li>有食物過敏、素食或其他忌口，請於訂位時說明。</li>
+   <li>為維持用餐品質，用餐時間為 2.5 小時。</li>
+  </ol>
+  <div class="hrs"><h3>營業時間</h3>
+   <table><tr><td>午餐（週六、日）</td><td>11:30 – 14:30</td></tr><tr><td>晚餐（週二至週日）</td><td>17:30 – 22:00</td></tr><tr><td>晚餐最後點餐</td><td>20:30</td></tr><tr><td>週一</td><td class="off">公休</td></tr></table>
+   <div class="btns"><a class="btn a" href="tel:+886200000000">電話訂位</a><a class="btn l" href="#reserve">LINE 訂位</a></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="bg2" id="faq"><div class="w">
+ <div class="sh c"><div class="en">FAQ</div><h2>常見問題</h2><div class="orn">◆</div></div>
+ <div class="faq">
+  <details open><summary>可以只單點不吃套餐嗎？</summary><p>可以。桌席與吧台皆可單點；主廚特選套餐因備料需求，建議提前預訂。</p></details>
+  <details><summary>有素食或兒童餐嗎？</summary><p>可提供蛋奶素套餐與兒童套餐，請於訂位時告知人數，以便主廚準備。</p></details>
+  <details><summary>可以自備酒水嗎？</summary><p>可以，每瓶酌收開瓶費 500 元，店內提供酒杯與冰桶服務。</p></details>
+  <details><summary>有停車位嗎？</summary><p>店家無附設停車場，步行 2 分鐘有公有停車場；建議搭乘捷運至大安站。</p></details>
+  <details><summary>可以包場或外燴嗎？</summary><p>可洽詢包場與企業餐會，請來電或 LINE 與我們討論人數、預算與菜色。</p></details>
+  <details><summary>可以刷卡嗎？</summary><p>可使用現金、信用卡與行動支付。</p></details>
+ </div>
+</div></section>
+
+<section id="visit"><div class="w">
+ <div class="loc">
+  <div class="tx"><h3>交通位置</h3><dl><dt>地址</dt><dd>台北市大安區安和路一段 000 巷 0 號</dd><dt>電話</dt><dd><a href="tel:+886200000000">02-0000-0000</a></dd><dt>捷運</dt><dd>文湖線、淡水信義線大安站 4 號出口，步行約 6 分鐘</dd><dt>停車</dt><dd>鄰近有公有停車場</dd></dl>
+   <div class="btns" style="justify-content:flex-start;margin-top:28px"><a class="btn a" href="#reserve">立即訂位</a></div></div>
+  <div class="map"><iframe loading="lazy" title="地圖" src="https://www.google.com/maps?q=台北市大安區安和路一段&z=16&hl=zh-TW&output=embed"></iframe></div>
+ </div>
+</div></section>
+
+<footer><div class="w">
+ <div class="bb">泊燈料理</div><div class="bs">Bodeng Kappo · Taipei</div>
+ <p>台北市大安區安和路一段 000 巷 0 號<br>02-0000-0000<br>午餐 週六、日 11:30–14:30<br>晚餐 週二至週日 17:30–22:00</p>
+ <nav><a href="#course">套餐</a><a href="#menu">菜單</a><a href="#chef">主廚</a><a href="#space">空間包廂</a><a href="#reserve">訂位須知</a><a href="#faq">常見問題</a></nav>
+ <div class="legal">© 泊燈料理　｜　示範作品，非真實店家 · 網站設計 <a href="https://kova.tw">Kova</a> · 照片 Unsplash</div>
+</div></footer>
+<div class="mbar"><a href="tel:+886200000000">撥打電話</a><a class="a" href="#reserve">線上訂位</a></div>
+<script>
+const nav=document.getElementById('nav'),links=document.getElementById('links');
+const s=()=>nav.classList.toggle('solid',scrollY>40||links.classList.contains('open'));addEventListener('scroll',s);s();
+document.getElementById('burger').onclick=()=>{links.classList.toggle('open');s()};
+links.querySelectorAll('a').forEach(a=>a.onclick=()=>{links.classList.remove('open');s()});
+</script>
 </body>
 </html>
