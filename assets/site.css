@@ -302,6 +302,26 @@ a { color: inherit; }
   color: var(--navy);
   font-weight: 500;
 }
+.line-qr {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 26px 0 0;
+  padding: 14px 20px 14px 14px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  width: fit-content;
+  box-shadow: var(--shadow);
+}
+.line-qr img { width: 140px; height: 140px; border-radius: 8px; }
+.line-qr figcaption { display: flex; flex-direction: column; gap: 2px; }
+.line-qr strong { color: var(--navy); font-size: 1rem; }
+.line-qr span { color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 720px) {
+  .line-qr { gap: 14px; padding: 10px 16px 10px 10px; }
+  .line-qr img { width: 96px; height: 96px; }
+}
 .contact-card {
   background: var(--white);
   border: 1px solid var(--line);
