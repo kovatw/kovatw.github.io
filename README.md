@@ -18,7 +18,7 @@ python3 -m http.server 41773
 
 - `index.html`：Kova 主站
 - `assets/logo.svg`、`assets/favicon.svg`：標誌（深藍圓、白色 K、青色斜線）
-- `demos/`：五間虛構店家的示範頁
+- `demos/`：虛構店家的示範頁（作品集另外連到 kova.tw 底下各自 repo 的虛構店家示範網站）
 - `.nojekyll`：讓 GitHub Pages 不要用 Jekyll 處理
 
-示範頁頁尾標明「示範作品，非真實店家」。電話 `02-0000-0000` 是假的。
+作品集只放虛構店家：店名、地址、電話皆為虛構，電話 `0X-0000-0000` 無法撥通。
